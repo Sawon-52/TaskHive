@@ -6,8 +6,8 @@ export default function Search() {
           <input className="input input-bordered join-item outline-none rounded-2xl h-10" placeholder="Search" />
         </div>
       </div>
-      <div >
-        <button className="btn join-item h-10 ">Search</button>
+      <div className="h-10">
+        <button className="p-2 bg-gray-600 text-white rounded-r-2xl text-sm h-full">Search</button>
       </div>
     </div>
   );

@@ -6,11 +6,15 @@ import ThemeToggle from "./ThemeToggle/ThemeToggle";
 
 export default function Header() {
   return (
-    <div className="w-[90%] mx-auto flex items-center justify-between py-4">
+    <div className="w-[80%] mx-auto flex items-center justify-between py-4">
       <Logo></Logo>
-      <Search></Search>
-      <ThemeToggle></ThemeToggle>
-      <Notification></Notification>
+      <div className="mt-1">
+        <Search></Search>
+      </div>
+      <div className="flex gap-5 mt-1">
+        <ThemeToggle></ThemeToggle>
+        <Notification></Notification>
+      </div>
       <Profile></Profile>
     </div>
   );
