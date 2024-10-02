@@ -1,7 +1,7 @@
 
 import TaskGenaretor from "./TaskGenaretor/TaskGenaretor";
 
-export default function TaskBoard({tasks}) {
+export default function TaskBoard({tasks, handleAddTask}) {
     
   return (
     <div className="grid lg:grid-cols-4 gap-5">
@@ -9,7 +9,7 @@ export default function TaskBoard({tasks}) {
         <h2>This is a task board</h2>
       </div>
       <div className="col-span-3">
-        <TaskGenaretor tasks={tasks}></TaskGenaretor>
+        <TaskGenaretor tasks={tasks} handleAddTask={handleAddTask}></TaskGenaretor>
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ export default function TaskList({ tasks }) {
     <div>
       {tasks.map((task, index) => (
         <div className="overflow-x-auto" key={index}>
-          <table className="table">
+          <table className="table overflow-x-auto">
             {/* head */}
             <thead>
               <tr>
