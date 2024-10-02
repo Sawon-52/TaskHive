@@ -7,7 +7,7 @@ import ThemeToggle from "./ThemeToggle/ThemeToggle";
 export default function Header() {
   return (
     <div>
-      <div className="navbar py-6">
+      <div className="navbar py-6 px-0">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

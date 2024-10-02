@@ -5,7 +5,7 @@ import TaskBoard from "./Components/TaskBoard/TaskBoard";
 
 function App() {
   return (
-    <div className="w-[80%] mx-auto">
+    <div className="w-[95%] lg:w-[80%] mx-auto">
       <Header></Header>
       <div>
         <TaskBoard></TaskBoard>
