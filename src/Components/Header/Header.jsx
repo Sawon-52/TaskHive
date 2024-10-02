@@ -1,4 +1,4 @@
-import Notification from "../Notification/Notification";
+import Notification from "./Notification/Notification";
 import Logo from "./Logo/Logo";
 import Profile from "./Profile/Profile";
 import Search from "./Search/Search";
@@ -6,7 +6,7 @@ import ThemeToggle from "./ThemeToggle/ThemeToggle";
 
 export default function Header() {
   return (
-    <div className="w-[80%] mx-auto">
+    <div>
       <div className="navbar py-6">
         <div className="navbar-start">
           <div className="dropdown">
