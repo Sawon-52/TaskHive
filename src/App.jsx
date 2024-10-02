@@ -14,7 +14,8 @@ function App() {
     priority: "Low",
     isFavorite: true,
   };
-  const [tasks, setTask] = useState([defaultTask]);
+  const [tasks, setTasks] = useState([defaultTask]);
+
   const [showModal, setShowModal] = useState(false);
 
   function handleModal() {
@@ -24,11 +25,18 @@ function App() {
   function handleAddTask() {
     setShowModal(true);
   }
+  function handleAddNewTask(newTask) {
+    console.log("adding new tasks.at.", newTask);
+    setTasks([...tasks, newTask]);
+    setShowModal(false);
+
+    // setTasks(newTask);
+  }
+  console.log("hlw", tasks);
 
   return (
     <div className="w-[95%] lg:w-[80%] mx-auto">
-      {showModal && <AddTaskModal handleModal={handleModal}></AddTaskModal>}
-
+      {showModal && <AddTaskModal handleModal={handleModal} onSave={handleAddNewTask}></AddTaskModal>}
       <Header></Header>
       <div>
         <TaskBoard tasks={tasks} handleAddTask={handleAddTask}></TaskBoard>

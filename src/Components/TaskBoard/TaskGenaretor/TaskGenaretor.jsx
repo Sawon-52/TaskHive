@@ -1,5 +1,6 @@
+import ListOfTask from "./ListOfTask/ListOfTask";
 import PerformTask from "./PerformTask/PerformTask";
-import TaskList from "./TaskList/TaskList";
+import TaskTableHead from "./TaskTableHead/TaskTableHead";
 
 export default function TaskGenaretor({ tasks, handleAddTask }) {
   return (
@@ -8,7 +9,7 @@ export default function TaskGenaretor({ tasks, handleAddTask }) {
         <PerformTask handleAddTask={handleAddTask}></PerformTask>
       </div>
       <div>
-        <TaskList tasks={tasks}></TaskList>
+        <ListOfTask tasks={tasks}></ListOfTask>
       </div>
     </div>
   );
