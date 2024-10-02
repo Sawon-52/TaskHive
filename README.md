@@ -1,9 +1,8 @@
 # TaskHive
 ### Live Demo
-[Live Demo](https://task-hive-xi.vercel.app/).
+[Live Demo](https://task-hive-xi.vercel.app/)
 
-This project is a simple grade showcasing landing page built using **React**. It demonstrates how to effectively structure components in React by passing fake data as props to different components. The page is styled using **Tailwind CSS** for a clean and responsive design.
-
+TaskHive is a simple yet powerful task management app built with React.js, designed to help you organize and track your tasks efficiently.
 ## React Topics Covered
 
 - **Component-based architecture**: Each part of the UI is divided into reusable components.
