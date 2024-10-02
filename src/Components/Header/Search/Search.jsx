@@ -3,7 +3,7 @@ export default function Search() {
     <div className="join">
       <div>
         <div>
-          <input className="input input-bordered join-item outline-none rounded-2xl h-10" placeholder="Search" />
+          <input className="max-w-[400px] input input-bordered join-item outline-none rounded-2xl h-10" placeholder="Search" />
         </div>
       </div>
       <div className="h-10">
