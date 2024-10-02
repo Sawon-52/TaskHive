@@ -25,9 +25,9 @@ export default function AddTaskModal({ handleModal, onSave }) {
     <>
       <div className="bg-black bg-opacity-70 w-full h-full z-10 absolute top-0 left-0"></div>
       <div className="card bg-base-300 w-full max-w-96 shadow-xl space-y-6 p-4 absolute lg:my-20 lg:p-11 mx-auto my-10 z-10 topo-1/4 left-1/3 ">
-        {/* <div className="absolute right-6 top-5 cursor-pointer" onClick={() => handleModal()}>
+        <div className="absolute right-6 top-5 cursor-pointer" onClick={() => handleModal()}>
           <RxCross2 className="text-xl font-bold " />
-        </div> */}
+        </div>
         <label className="form-control w-full max-w-xs">
           <div className="label">
             <span className="label-tex font-semibold">Title</span>
