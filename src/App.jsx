@@ -55,12 +55,17 @@ function App() {
     const tasksAfterDelete = tasks.filter((task) => task.id !== taskId);
     setTasks(tasksAfterDelete);
   }
+  function handleClearAll() {
+    tasks.length = 0;
+    setTasks([...tasks]);
+  }
+
   return (
     <div className="w-[95%] lg:w-[80%] mx-auto">
       {showModal && <AddTaskModal handleModal={handleModal} onSave={handleAddNewTask} updateTask={updateTask}></AddTaskModal>}
       <Header></Header>
       <div>
-        <TaskBoard tasks={tasks} handleAddTask={handleAddTask} onEdit={handleEdit} onDelete={handleDelete}></TaskBoard>
+        <TaskBoard tasks={tasks} handleAddTask={handleAddTask} onEdit={handleEdit} onDelete={handleDelete} onClearAll={handleClearAll}></TaskBoard>
       </div>
       <div>
         <Footer></Footer>
