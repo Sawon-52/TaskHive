@@ -11,7 +11,7 @@ export default function Search({ onSearch }) {
     <div className="join">
       <div>
         <div>
-          <input className="max-w-[400px] input input-bordered join-item outline-none rounded-2xl h-10" placeholder="Search" value={searchItems} onChange={(e) => setSearchItems(e.target.value)} />
+          <input className="max-w-[400px] input input-bordered join-item outline-none rounded-2xl h-10" placeholder="Search base on title" value={searchItems} onChange={(e) => setSearchItems(e.target.value)} />
         </div>
       </div>
       <div className="h-10" onClick={handleClick}>

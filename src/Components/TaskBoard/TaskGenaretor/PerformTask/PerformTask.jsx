@@ -1,6 +1,6 @@
 export default function PerformTask({ handleAddTask, onClearAll }) {
   return (
-    <div className="flex justify-between items-center">
+    <div className="flex justify-between items-center flex-wrap">
       <h2 className="text-2xl font-semibold text-gray-700">Task board</h2>
       <div className="flex gap-5">
         <button className="btn btn-outline btn-success " onClick={handleAddTask}>

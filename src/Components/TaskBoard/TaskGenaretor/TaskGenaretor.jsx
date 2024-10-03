@@ -7,6 +7,7 @@ export default function TaskGenaretor({ tasks, handleAddTask, onEdit, onDelete, 
       <div className="mb-5">
         <PerformTask handleAddTask={handleAddTask} onClearAll={onClearAll}></PerformTask>
       </div>
+      
       {tasks.length > 0 ? (
         <div>
           <ListOfTask tasks={tasks} onEdit={onEdit} onDelete={onDelete} onFav={onFav}></ListOfTask>
@@ -14,6 +15,7 @@ export default function TaskGenaretor({ tasks, handleAddTask, onEdit, onDelete, 
       ) : (
         "Task not found"
       )}
+
     </div>
   );
 }
