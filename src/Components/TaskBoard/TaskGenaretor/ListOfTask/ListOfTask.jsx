@@ -1,6 +1,6 @@
 import TaskTableHead from "../TaskTableHead/TaskTableHead";
 
-export default function ListOfTask({ tasks, onEdit, onDelete,onFav }) {
+export default function ListOfTask({ tasks, onEdit, onDelete, onFav }) {
   return (
     <div>
       <table className="table">
@@ -30,7 +30,7 @@ export default function ListOfTask({ tasks, onEdit, onDelete,onFav }) {
               <td>{task.priority}</td>
 
               <td>
-                <div className="flex gap-2">
+                <div className="flex gap-4">
                   <button className="text-red-500 text-md font-semibold" onClick={() => onDelete(task.id)}>
                     Delete
                   </button>

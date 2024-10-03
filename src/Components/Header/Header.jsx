@@ -4,7 +4,9 @@ import Profile from "./Profile/Profile";
 import Search from "./Search/Search";
 import ThemeToggle from "./ThemeToggle/ThemeToggle";
 
-export default function Header() {
+export default function Header({ onSearch }) {
+  
+
   return (
     <div>
       <div className="navbar py-6 px-0">
@@ -17,22 +19,21 @@ export default function Header() {
             </div>
             <ul tabIndex={0} className="menu-md dropdown-content bg-base-100 rounded-box z-[1] mt-3 max-w-[400px] p-2 px-4 shadow focus:bg-none ">
               <li>
-                <Search></Search>
+                <Search onSearch={onSearch} ></Search>
               </li>
-              <li></li>
               <li>
                 <Profile></Profile>
               </li>
             </ul>
           </div>
-          <a>
+          <div>
             <Logo></Logo>
-          </a>
+          </div>
         </div>
         <div className="navbar-center hidden lg:flex items-center ">
           <ul className="menu-horizontal px-1 flex items-center gap-5">
             <li>
-              <Search></Search>
+              <Search onSearch={onSearch}></Search>
             </li>
             <li>
               <ThemeToggle></ThemeToggle>

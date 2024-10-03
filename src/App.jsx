@@ -16,7 +16,6 @@ function App() {
   };
   const [tasks, setTasks] = useState([defaultTask]);
   const [showModal, setShowModal] = useState(false);
-
   const [updateTask, setUpdate] = useState(null);
 
   function handleModal() {
@@ -28,6 +27,7 @@ function App() {
     setShowModal(true);
     setUpdate(null);
   }
+
   function handleAddNewTask(newTask, isAdd) {
     if (isAdd) {
       setTasks([...tasks, newTask]);
@@ -68,10 +68,16 @@ function App() {
     setTasks(newTasks);
   }
 
+  function handleSearch(searchItems) {
+    console.log(searchItems);
+    const filtered = tasks.filter((task) => task.title.toLowerCase().includes(searchItems.toLowerCase()));
+    setTasks([...filtered]);
+  }
+
   return (
     <div className="w-[95%] lg:w-[80%] mx-auto">
       {showModal && <AddTaskModal handleModal={handleModal} onSave={handleAddNewTask} updateTask={updateTask}></AddTaskModal>}
-      <Header></Header>
+      <Header onSearch={handleSearch}></Header>
       <div>
         <TaskBoard tasks={tasks} handleAddTask={handleAddTask} onEdit={handleEdit} onDelete={handleDelete} onClearAll={handleClearAll} onFav={handleFavorite}></TaskBoard>
       </div>
