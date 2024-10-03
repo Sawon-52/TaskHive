@@ -15,31 +15,48 @@ function App() {
     isFavorite: true,
   };
   const [tasks, setTasks] = useState([defaultTask]);
-
   const [showModal, setShowModal] = useState(false);
+
+  const [updateTask, setUpdate] = useState(null);
 
   function handleModal() {
     setShowModal(false);
+    setUpdate(null);
   }
 
   function handleAddTask() {
     setShowModal(true);
+    setUpdate(null);
   }
-  function handleAddNewTask(newTask) {
-    console.log("adding new tasks.at.", newTask);
-    setTasks([...tasks, newTask]);
-    setShowModal(false);
+  function handleAddNewTask(newTask, isAdd) {
+    if (isAdd) {
+      setTasks([...tasks, newTask]);
+    } else {
+      setTasks(
+        tasks.map((task) => {
+          if (task.id === newTask.id) {
+            return newTask;
+          }
+          return task;
+        }),
+      );
+    }
 
-    // setTasks(newTask);
+    setShowModal(false);
   }
-  console.log("hlw", tasks);
+
+  function handleEdit(task) {
+    setUpdate(task);
+    setShowModal(true);
+    console.log("updated task", updateTask);
+  }
 
   return (
     <div className="w-[95%] lg:w-[80%] mx-auto">
-      {showModal && <AddTaskModal handleModal={handleModal} onSave={handleAddNewTask}></AddTaskModal>}
+      {showModal && <AddTaskModal handleModal={handleModal} onSave={handleAddNewTask} updateTask={updateTask}></AddTaskModal>}
       <Header></Header>
       <div>
-        <TaskBoard tasks={tasks} handleAddTask={handleAddTask}></TaskBoard>
+        <TaskBoard tasks={tasks} handleAddTask={handleAddTask} onEdit={handleEdit}></TaskBoard>
       </div>
       <div>
         <Footer></Footer>

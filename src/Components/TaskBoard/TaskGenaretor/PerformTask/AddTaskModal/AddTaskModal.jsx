@@ -1,15 +1,20 @@
 import React, { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 
-export default function AddTaskModal({ handleModal, onSave }) {
-  const [task, setTask] = useState({
-    id: crypto.randomUUID(),
-    title: "",
-    description: "",
-    tags: [],
-    priority: "",
-    isFavorite: false,
-  });
+export default function AddTaskModal({ handleModal, onSave, updateTask }) {
+  const [task, setTask] = useState(
+    updateTask || {
+      id: crypto.randomUUID(),
+      title: "",
+      description: "",
+      tags: [],
+      priority: "",
+      isFavorite: false,
+    },
+  );
+
+  const [isAdd, setIsAdd] = useState(Object.is(updateTask, null));
+
   const handleChange = (e) => {
     const name = e.target.name;
     let value = e.target.value;
@@ -21,12 +26,16 @@ export default function AddTaskModal({ handleModal, onSave }) {
       [name]: value,
     });
   };
+
   return (
     <>
       <div className="bg-black bg-opacity-70 w-full h-full z-10 absolute top-0 left-0"></div>
-      <div className="card bg-base-300 w-full max-w-96 shadow-xl space-y-6 p-4 absolute lg:my-20 lg:p-11 mx-auto my-10 z-10 topo-1/4 left-1/3 ">
+      <div className="card bg-base-300 w-full max-w-96 shadow-xl space-y-4 p-4 absolute lg:my-20 lg:p-11 mx-auto my-10 z-10 topo-1/4 left-1/3 ">
         <div className="absolute right-6 top-5 cursor-pointer" onClick={() => handleModal()}>
           <RxCross2 className="text-xl font-bold " />
+        </div>
+        <div className="text-center font-semibold text-xl">
+          <h2>{isAdd ? "Add New Task" : "Edit Task"}</h2>
         </div>
         <label className="form-control w-full max-w-xs">
           <div className="label">
@@ -65,7 +74,7 @@ export default function AddTaskModal({ handleModal, onSave }) {
         </div>
 
         <div className="flex justify-center">
-          <button className="btn btn-active btn-primary" onClick={() => onSave(task)}>
+          <button className="btn btn-active btn-primary w-28" onClick={() => onSave(task, isAdd)}>
             Save
           </button>
         </div>

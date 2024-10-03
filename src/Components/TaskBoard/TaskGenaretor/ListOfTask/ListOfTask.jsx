@@ -1,9 +1,6 @@
 import TaskTableHead from "../TaskTableHead/TaskTableHead";
 
-export default function ListOfTask({ tasks }) {
-  console.log("List of task", tasks[0].title);
-  //   const { id, title, description, tags, priority, isFavorite } = tasks;
-  //   console.log(title);
+export default function ListOfTask({ tasks, onEdit }) {
   return (
     <div>
       <table className="table">
@@ -33,7 +30,9 @@ export default function ListOfTask({ tasks }) {
               <td>
                 <div className="flex gap-2">
                   <button className="text-red-500 text-md font-semibold">Delete</button>
-                  <button className="text-blue-500 text-md font-semibold">Edit</button>
+                  <button className="text-blue-500 text-md font-semibold" onClick={() => onEdit(task)}>
+                    Edit
+                  </button>
                 </div>
               </td>
             </tr>
