@@ -4,6 +4,7 @@ export default function Search({ onSearch }) {
   const [searchItems, setSearchItems] = useState("");
   function handleClick() {
     onSearch(searchItems);
+    setSearchItems("");
   }
 
   return (
