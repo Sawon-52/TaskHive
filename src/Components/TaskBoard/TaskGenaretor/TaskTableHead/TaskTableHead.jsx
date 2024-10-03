@@ -2,7 +2,7 @@ import React from "react";
 
 export default function TaskTableHead() {
   return (
-    <tr>
+    <tr className="text-gray-700 text-md ">
       <th></th>
       <th>Title</th>
       <th>Description</th>

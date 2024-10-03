@@ -75,13 +75,13 @@ function App() {
   }
 
   return (
-    <div className="w-[95%] lg:w-[80%] mx-auto">
+    <div className="w-[95%] lg:w-[80%] mx-auto ">
       {showModal && <AddTaskModal handleModal={handleModal} onSave={handleAddNewTask} updateTask={updateTask}></AddTaskModal>}
       <Header onSearch={handleSearch}></Header>
       <div>
         <TaskBoard tasks={tasks} handleAddTask={handleAddTask} onEdit={handleEdit} onDelete={handleDelete} onClearAll={handleClearAll} onFav={handleFavorite}></TaskBoard>
       </div>
-      <div>
+      <div className="bg-gray-800 min-h-[80px] grid place-items-center">
         <Footer></Footer>
       </div>
     </div>

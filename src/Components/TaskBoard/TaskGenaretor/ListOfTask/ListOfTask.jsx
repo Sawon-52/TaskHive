@@ -10,7 +10,7 @@ export default function ListOfTask({ tasks, onEdit, onDelete, onFav }) {
 
         {tasks.map((task, index) => (
           <tbody key={index}>
-            <tr className="hover">
+            <tr className="hover:bg-white bg-blue-50">
               <th>
                 <button onClick={() => onFav(task.id)}>
                   <div className="rating gap-1 flex items-center">{task.isFavorite ? <input type="radio" name="rating-3" className="mask mask-heart bg-rose-400 w-4" defaultChecked /> : <input type="radio" name="rating-3" className="mask mask-heart bg-rose-200 w-4" defaultChecked />}</div>

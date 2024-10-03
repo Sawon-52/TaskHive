@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BsSearch } from "react-icons/bs";
 
 export default function Search({ onSearch }) {
   const [searchItems, setSearchItems] = useState("");
@@ -15,7 +16,9 @@ export default function Search({ onSearch }) {
         </div>
       </div>
       <div className="h-10" onClick={handleClick}>
-        <button className="p-2 bg-gray-600 text-white rounded-r-2xl text-sm h-full">Search</button>
+        <button className="p-2 px-4 bg-gray-700  text-white rounded-r-2xl text-sm h-full">
+          <BsSearch className="text-xl font-bold text-white" />
+        </button>
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ export default function Profile() {
   return (
     <div className="flex items-center gap-3">
       <div className="avatar online placeholder">
-        <div className="bg-gray-600 text-neutral-content w-10 rounded-full">
+        <div className="bg-gray-700 text-neutral-content w-10 rounded-full">
           <span className="text-xl text-white">Me</span>
         </div>
       </div>
