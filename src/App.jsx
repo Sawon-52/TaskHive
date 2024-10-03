@@ -60,12 +60,20 @@ function App() {
     setTasks([...tasks]);
   }
 
+  function handleFavorite(taskId) {
+    const taskIndex = tasks.findIndex((task) => task.id === taskId);
+
+    const newTasks = [...tasks];
+    newTasks[taskIndex].isFavorite = !newTasks[taskIndex].isFavorite;
+    setTasks(newTasks);
+  }
+
   return (
     <div className="w-[95%] lg:w-[80%] mx-auto">
       {showModal && <AddTaskModal handleModal={handleModal} onSave={handleAddNewTask} updateTask={updateTask}></AddTaskModal>}
       <Header></Header>
       <div>
-        <TaskBoard tasks={tasks} handleAddTask={handleAddTask} onEdit={handleEdit} onDelete={handleDelete} onClearAll={handleClearAll}></TaskBoard>
+        <TaskBoard tasks={tasks} handleAddTask={handleAddTask} onEdit={handleEdit} onDelete={handleDelete} onClearAll={handleClearAll} onFav={handleFavorite}></TaskBoard>
       </div>
       <div>
         <Footer></Footer>
